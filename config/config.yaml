@@ -1,0 +1,33 @@
+goes:
+  buckets:
+    - noaa-goes16
+    - noaa-goes18
+  product: ABI-L1b-RadF
+  bands:
+    - 13
+    - 2
+  roi_lat_lon:
+    lat_min: null
+    lat_max: null
+    lon_min: null
+    lon_max: null
+
+events:
+  event_1:
+    start: null
+    end: null
+  event_2:
+    start: null
+    end: null
+  event_3:
+    start: null
+    end: null
+  baseline:
+    start: null
+    end: null
+
+paths:
+  raw_tmp: data/raw_tmp
+  processed: data/processed
+  swpc: data/swpc
+  exports: data/exports

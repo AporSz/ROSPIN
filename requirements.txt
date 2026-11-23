@@ -1,0 +1,15 @@
+boto3
+botocore
+xarray
+netCDF4
+h5netcdf
+numpy
+scipy
+pandas
+matplotlib
+pyyaml
+python-dotenv
+eumdac
+satpy
+jupyter
+pytest

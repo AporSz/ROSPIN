@@ -1,1 +1,18 @@
 /dr_equator_recovery_plan.md
+/dr_equator_team_tasks.md
+
+*.nc
+*.nat
+*.zarr
+.env
+__pycache__/
+.ipynb_checkpoints/
+.pytest_cache/
+.DS_Store
+Thumbs.db
+
+# Keep the data directory structure while ignoring acquired/generated data.
+data/*
+!data/**/
+!data/**/.gitkeep
+/.venv/
