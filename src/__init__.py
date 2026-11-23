@@ -1,0 +1,1 @@
+"""Dr. Equator research package."""
