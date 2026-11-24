@@ -30,6 +30,23 @@ Copy `.env.example` to `.env` and set `EUMETSAT_CONSUMER_KEY` and
 Keep `.env` private; it is excluded from Git. Configure the ROI and event
 windows in `config/config.yaml` before running analyses.
 
+## GOES ABI ingestion
+
+Set the event `start`/`end` timestamps and all four `goes.roi_lat_lon` bounds
+in `config/config.yaml`, then run:
+
+```bash
+python -m src.ingestion.goes_downloader --event event_1
+```
+
+The downloader uses anonymous access to the configured public NOAA GOES S3
+bucket, crops each configured band to the geographic ROI, and writes compressed
+per-scan NetCDF files under `data/processed/<event>/G16/<band>/` (or `G18`).
+Existing cropped scans are skipped on subsequent runs. Full-disk downloads
+are removed from `data/raw_tmp/` after each scan. For a small run, pass
+`--max-scans 3` to process at most three scans per configured band; `--bucket`
+can select another configured satellite bucket.
+
 ## Data flow
 
 ```text
