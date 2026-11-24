@@ -7,15 +7,15 @@ goes:
     - 13
     - 2
   roi_lat_lon:
-    lat_min: null
-    lat_max: null
-    lon_min: null
-    lon_max: null
+    lat_min: -5.0    # Open equatorial Pacific Ocean (tested clean DQF=0 at 0°, -85°)
+    lat_max: 5.0
+    lon_min: -95.0
+    lon_max: -85.0
 
 events:
   event_1:
-    start: null
-    end: null
+    start: "2024-05-10T18:00:00Z"   # May 10–11, 2024 SPE window (±12h around 2024-05-11T06:00Z)
+    end: "2024-05-11T18:00:00Z"
   event_2:
     start: null
     end: null
