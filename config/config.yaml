@@ -7,24 +7,24 @@ goes:
     - 13
     - 2
   roi_lat_lon:
-    lat_min: -5.0    # Open equatorial Pacific Ocean (tested clean DQF=0 at 0°, -85°)
+    lat_min: -5.0    # Island-free open equatorial Pacific (avoids Galapagos; symmetric for G16/G18)
     lat_max: 5.0
-    lon_min: -95.0
-    lon_max: -85.0
+    lon_min: -110.0
+    lon_max: -100.0
 
 events:
   event_1:
-    start: "2024-05-10T18:00:00Z"   # May 10–11, 2024 SPE window (±12h around 2024-05-11T06:00Z)
+    start: "2024-05-10T18:00:00Z"   # AR3664 GLE #74 & May 11 S2-S3 SPE peak (±12h around 2024-05-11T06:00Z)
     end: "2024-05-11T18:00:00Z"
   event_2:
-    start: null
-    end: null
+    start: "2024-05-14T12:00:00Z"   # AR3664 X8.7 flare & secondary SEP surge (May 14-15, 2024)
+    end: "2024-05-15T12:00:00Z"
   event_3:
-    start: null
-    end: null
+    start: "2024-06-08T00:00:00Z"   # AR3697 M9.6 flare & ~1030 pfu S3 SPE peak (June 8, 2024)
+    end: "2024-06-09T00:00:00Z"
   baseline:
-    start: null
-    end: null
+    start: "2024-05-01T18:00:00Z"   # Pre-storm solar-quiet control window (matched geometry & season)
+    end: "2024-05-02T18:00:00Z"
 
 paths:
   raw_tmp: data/raw_tmp
