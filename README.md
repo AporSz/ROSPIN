@@ -9,6 +9,7 @@ and presentations.
 ## Repository layout
 
 - `config/`: project settings, region of interest, bands, and event windows.
+- `docs/`: science framing, off-disk masking diagnostics, and metric methodology.
 - `data/`: temporary inputs, cropped/processed data, SWPC archives, and exports.
 - `notebooks/`: exploratory ABI scan inspection.
 - `src/ingestion/`: GOES and EUMETSAT acquisition scaffolds.
@@ -58,3 +59,13 @@ The ingestion pipeline is intended to crop GOES scans to the configured ROI
 before removing temporary full-disk downloads. Processed data should follow a
 stable schema; exported arrays and tables are intended as inputs to figure
 generation.
+
+## Methodology
+
+Because NOAA Level-1b ground processing masks off-disk deep-space pixels in
+`ABI-L1b-RadF` (`_FillValue = 4095`, `DQF = -1`), Dr. Equator uses a dual-band
+open-ocean dark-target strategy combining nightside `C02` ($0.64\ \mu\text{m}$
+VNIR, $0.5\text{ km}$) and continuous `C13` ($10.3\ \mu\text{m}$ IR,
+$2.0\text{ km}$) at native spatial resolution. Full details on DQF partitioning,
+$>5\hat{\sigma}_{\text{MAD}}$ local-median spike detection, ROI selection, and
+2024 SPE/baseline windows are documented in [`docs/methods.md`](docs/methods.md).
