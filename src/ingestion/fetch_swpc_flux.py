@@ -18,7 +18,12 @@ import yaml
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 CONFIG_PATH = PROJECT_ROOT / "config" / "config.yaml"
 DEFAULT_DATES = ["20240510", "20240511", "20240512", "20240514", "20240515"]
-DATES = DEFAULT_DATES
+DATES = [
+    "20240501", "20240502",  # baseline (2024-05-01T18:00Z -> 2024-05-02T18:00Z)
+    "20240510", "20240511",  # event_1  (2024-05-10T18:00Z -> 2024-05-11T18:00Z)
+    "20240514", "20240515",  # event_2  (2024-05-14T12:00Z -> 2024-05-15T12:00Z)
+    "20240608", "20240609",  # event_3  (2024-06-08T00:00Z -> 2024-06-09T00:00Z)
+]
 OUT_DIR = "data/swpc"
 
 BASE_XRS = "https://data.ngdc.noaa.gov/platforms/solar-space-observing-satellites/goes/goes16/l2/data/xrsf-l2-avg1m_science"

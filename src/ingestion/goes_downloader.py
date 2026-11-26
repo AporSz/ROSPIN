@@ -354,7 +354,7 @@ def download_crop_and_cleanup(
                 f"{DOWNLOAD_ATTEMPTS} attempts"
             ) from last_error
 
-        with xr.open_dataset(raw_path, engine="h5netcdf") as source:
+        with xr.open_dataset(raw_path, engine="netcdf4") as source:
             cropped = crop_dataset(source, roi_lat_lon)
             encoding = {
                 name: {
@@ -367,7 +367,7 @@ def download_crop_and_cleanup(
             }
             cropped.to_netcdf(
                 output_temp,
-                engine="h5netcdf",
+                engine="netcdf4",
                 encoding=encoding,
             )
         output_temp.replace(destination)
